@@ -1,4 +1,4 @@
 # test-vk-oauth
-npm install
+1) npm install
 
-node server
+2) node server
