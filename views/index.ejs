@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Авторизация</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="wrapper">
+	<% if (!user) { %>
+
+	<h2>Добро пожаловать!</h2>
+
+    <a class="login__link" href="/auth/vk">Войти</a>
+
+	<% } else { %>
+		    <a href="/logout">Выйти</a>
+
+		<div class="profile">
+			<div class="user">
+					<h2>Привет, <%= user.displayName %>.</h2>
+			    <p>VK ID: <%= user.id %></p>
+			    <img src=<%=user.photos[1].value%>></img>
+			</div>
+
+		<div class="friends_list">
+		  	<% for(var i = 0; i <= user.friends.response.count - 1; i++){ %>
+				<div class="friends_item">
+					<p class="name"><%= user.friends.response.items[i].first_name %></p>
+					<p class="sname"><%= user.friends.response.items[i].last_name %></p>
+					<img src="<%= user.friends.response.items[i].photo_200_orig %>" alt="">	
+				</div>
+				
+
+		    <% }; %>
+		</div>
+
+
+	<% } %>
+</div>
+
+
+
+
+</body>
+</html>
+

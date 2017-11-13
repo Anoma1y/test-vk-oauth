@@ -1,0 +1,19 @@
+body {
+	background-color: #fff;
+}
+a{
+	display: block;
+	width: 50px;
+	padding: 5px 10px;
+	text-align: center;
+	background-color: orange;
+	color: white;
+	text-decoration: none;
+}
+.user img {
+	width: 250px;
+}
+.friends_list .friends_item {
+	float: left;
+	/*width: 500px;*/
+}
